@@ -5,3 +5,5 @@ set -ouex pipefail
 # set default target to graphical
 systemctl set-default graphical.target
 systemctl enable snow-linux-live-setup.service
+systemctl disable boot.mount
+systemctl mask boot.mount
