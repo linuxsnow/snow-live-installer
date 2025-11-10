@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/linuxsnow/debian-bootc-gnome:latest
+FROM ghcr.io/frostyard/debian-bootc-gnome:latest
 
 COPY system_files /
 
@@ -13,7 +13,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
     /ctx/build
-    
+
 ### LINTING
 ## Verify final image and contents are correct.
 RUN bootc container lint
