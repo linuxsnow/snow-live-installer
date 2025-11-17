@@ -9,6 +9,11 @@ apt-get update -y
 apt-get install -y \
 	podman
 
+# Cleanup unwanted packages
+apt-get purge -y \
+	wpasupplicant \
+	gnome-initial-setup \
+	gnome-tour
 
 # set default target to graphical
 systemctl set-default graphical.target
