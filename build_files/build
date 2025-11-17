@@ -2,6 +2,14 @@
 
 set -ouex pipefail
 
+# Initial update
+apt-get update -y
+
+# Distrobox
+apt-get install -y \
+	podman
+
+
 # set default target to graphical
 systemctl set-default graphical.target
 systemctl enable snow-linux-live-setup.service
